@@ -1,68 +1,16 @@
 body {
-<<<<<<< HEAD
-      font-weight: bold;
-      text-align: center;
-      font-family: 'Montserrat', sans-serif;
-      background-color: black;
-      padding: 20px;
-      color: goldenrod;
-  }
-
-.card {
-    margin: auto;
-    max-width: 400px;
-    border: 1px solid whitesmoke;
-    border-radius: 10px;
-    padding: 20px;
-    background-color: rgb(95, 90, 85);
-=======
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #1c1c1c;
-  color: #ffffff;
   text-align: center;
+  background-color: #000;
+  color: #fff;
 }
 
-header {
-  background-color: #000000;
-  padding: 1rem 0;
+nav {
+  margin: 20px;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2rem;
-  color: #ffcc00;
-}
-
-nav button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: #ffcc00;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-nav button:hover {
-  background-color: #e6b800;
-}
-
-main {
-  padding: 20px;
-}
-
-#content {
-  margin-top: 20px;
-}
-
-footer {
-  margin-top: 20px;
-  font-size: 0.9rem;
-}
-
-footer a {
-  color: #ffcc00;
->>>>>>> 204b6ce679662211fc622da140eaa00f0235eb7d
+button {
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
 }
