@@ -1,6 +1,16 @@
 body {
-      text-align: center;
-      font-family: 'Montserrat', sans-serif;
-      background-color: black;
-      color: '#FCE919';
-  }
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+}
+
+nav {
+  margin: 20px;
+}
+
+button {
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+}

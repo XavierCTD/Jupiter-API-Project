@@ -1,41 +1,42 @@
 // Star Wars API
 
-const baseURL = "https://swapi.tech/api/";
 const contentDiv = document.getElementById("content");
+const charactersBtn = document.getElementById("charactersBtn");
+const starshipsBtn = document.getElementById("starshipsBtn");
 
-document.getElementById("people-nav").addEventListener("click", () => fetchData("people"));
-document.getElementById("planets-nav").addEventListener("click", () => fetchData("planets"));
+charactersBtn.addEventListener("click", () => fetchData("people"));
+charactersBtn.style.color = "white";
+charactersBtn.style.background = "radial-gradient(rgb(10, 50, 225), rgba(50, 50, 50, 0), rgb(10, 50, 225))";
+charactersBtn.style.border = "5px solid rgb(180, 185, 255)";
+charactersBtn.style.borderRadius = "10px";
+charactersBtn.style.cursor = "pointer";
+starshipsBtn.addEventListener("click", () => fetchData("starships"));
 
 async function fetchData(endpoint) {
-  try {
-    contentDiv.innerHTML = "<p>Loading...</p>";
-    const response = await fetch(`${baseURL}${endpoint}/`);
-    if (!response.ok) {
-      throw new Error(`Error: ${response.statusText}`);
+    try {
+        contentDiv.innerHTML = "Loading...";
+        const response = await fetch(`https://swapi.dev/api/${endpoint}/`);
+        if (!response.ok) throw new Error("API error");
+        
+        const data = await response.json();
+        displayData(data.results, endpoint);
+    } catch (error) {
+        contentDiv.innerHTML = `<p>Error loading data: ${error.message}</p>`;
     }
-    const data = await response.json();
-    displayData(endpoint, data.results);
-  } catch (error) {
-    contentDiv.innerHTML = `<p>Error: ${error.message}</p>`;
-  }
 }
 
-function displayData(endpoint, results) {
-  contentDiv.innerHTML = "";
-  const title = document.createElement("h2");
-  title.textContent = endpoint.charAt(0).toUpperCase() + endpoint.slice(1);
-  contentDiv.appendChild(title);
-
-  const list = document.createElement("ul");
-  results.forEach((item) => {
-    const listItem = document.createElement("li");
-    if (endpoint === "people") {
-      listItem.textContent = `Name: ${item.name}, Gender: ${item.gender}`;
-    } else if (endpoint === "planets") {
-      listItem.textContent = `Name: ${item.name}, Climate: ${item.climate}`;
-    }
-    list.appendChild(listItem);
-  });
-  contentDiv.appendChild(list);
+function displayData(items, type) {
+    contentDiv.innerHTML = ""; 
+    items.slice(0, 5).forEach(item => {  
+        const div = document.createElement("div");
+        div.innerHTML = type === "people" 
+            ? `<h3>${item.name}</h3><p>Height: ${item.height} cm</p>`
+            : `<h3>${item.name}</h3><p>Model: ${item.model}</p>`;
+        div.style.color = "rgb(200, 225, 10)";
+        div.style.border = "5px solid whitesmoke";
+        div.style.borderRadius = "10px";
+        div.style.margin = "0 auto";
+        div.style.padding = "15px";
+        contentDiv.appendChild(div);
+    });
 }
-
