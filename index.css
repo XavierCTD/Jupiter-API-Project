@@ -1,3 +1,7 @@
+h1 {
+  color: rgb(200, 225, 10);
+}
+
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -13,4 +17,28 @@ button {
   margin: 10px;
   padding: 10px;
   font-size: 16px;
+}
+
+#charactersBtn {
+  background: radial-gradient(rgb(10, 50, 225), rgba(50, 50, 50, 0), rgb(10, 50, 225));
+  border: 5px solid rgb(180, 185, 255);
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+#starshipsBtn {
+  background: radial-gradient(rgb(10, 50, 225), rgba(50, 50, 50, 0), rgb(10, 50, 225));
+  border: 5px solid rgb(180, 185, 255);
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+div {
+  color: rgb(200, 225, 10);
+  border: 5px solid whitesmoke;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 15px;
 }
