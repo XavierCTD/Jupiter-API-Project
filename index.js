@@ -19,7 +19,7 @@ async function fetchData(endpoint) {
         const data = await response.json();
         displayData(data.results, endpoint);
     } catch (error) {
-        contentDiv.innerHTML = `<p>Error: ${error.message}</p>`;
+        contentDiv.innerHTML = `<p>Click one of the two buttons above to see the results!</p>`;
     }
 }
 
@@ -27,7 +27,7 @@ fetchData();
 
 function displayData(items, type) {
    contentDiv.innerHTML = "";
-   items.slice(0, 5)forEach(item => {
+   items.slice(0, 5).forEach(item => {
        const objects = document.createElement("div");
        objects.innerHTML = type === "people"
        ? `<h3>${item.name}</h3><p>Height: ${item.height} cm</p>`
@@ -35,5 +35,5 @@ function displayData(items, type) {
        contentDiv.appendChild(objects);
    });
 }
-    
+
 });
