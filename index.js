@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const contentDiv = document.getElementById("content");    
 const charactersButton = document.getElementById("charactersBtn");
 const starshipsButton = document.getElementById("starshipsBtn");
+const endpoint = "people/1";
 
 charactersButton.addEventListener("click", () => fetchData("people"));
 starshipsButton.addEventListener("click", () => fetchData("starships"));
@@ -22,8 +23,6 @@ async function fetchData(endpoint) {
         contentDiv.innerHTML = `<p>Click one of the two buttons above to see the results!</p>`;
     }
 }
-
-fetchData();
 
 function displayData(items, type) {
    contentDiv.innerHTML = "";
