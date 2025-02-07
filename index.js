@@ -1,5 +1,6 @@
 // Star Wars API
 
+
 /* Creating a functioning page using DOMContentLoaded through the document. */
 
 document.addEventListener("DOMContentLoaded", () => {
