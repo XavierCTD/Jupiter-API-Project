@@ -1,11 +1,18 @@
 // Star Wars API
 
+/* Creating a functioning page using DOMContentLoaded through the document. */
+
 document.addEventListener("DOMContentLoaded", () => {
 
+
+/* Getting the HTML Id's by manipulating the DOM */    
+    
 const contentDiv = document.getElementById("content");    
 const charactersButton = document.getElementById("charactersBtn");
 const starshipsButton = document.getElementById("starshipsBtn");
 const endpoint = "people/1";
+
+/* Adding two fetches using the addEventListener and an asynchronous function */    
 
 charactersButton.addEventListener("click", () => fetchData("people"));
 starshipsButton.addEventListener("click", () => fetchData("starships"));
@@ -24,6 +31,9 @@ async function fetchData(endpoint) {
     }
 }
 
+
+/* Displaying the Star Wars data and information */    
+    
 function displayData(items, type) {
    contentDiv.innerHTML = "";
    items.slice(0, 5).forEach(item => {
